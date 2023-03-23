@@ -34,27 +34,17 @@
  */
 
 
+
 // IMPORTS
 // Import Node.js' `readline` module into the project.
 const readline = require('readline');
 
 
 
+// This function asks a bunch of biographical questions and generates a profile
+// for you.
 const generateProfile = function() {
 
-  // Create an `answers` array to hold user responses to biographical questions.
-  let answers = [];
-  const questions = [
-    "What's your name?",
-    "What's your nickname?",
-    "What's an activity you like doing?",
-    "What do you listen to while doing that?",
-    "Which meal is your favourite (eg: dinner, brunch, etc.)",
-    "What's your favourite thing to eat for that meal?",
-    "Which sport is your absolute favourite?",
-    "What is your superpower? In a few words, tell us what you are amazing at!"
-  ];
-  
   
   // COLLECT USER INPUT
   // Create an object (of class `InterfaceConstructor`) with `input` and `output` 
@@ -115,9 +105,14 @@ const generateProfile = function() {
                   rl.question("DO YOU HATE THIS PILE OF ABOMINATION THAT IS JAVASCRIPT!?: ", (answer9) => {
                     console.log(`Your Feedback: ${answer9}`);
 
+                    // Gather the answers and generate and profile summary with them:
+                    console.log(`${answer1}, also goes by ${answer2}. ${answer2} loves to ${answer3}, while listening to ${answer4}. ${answer2} loves ${answer5}, especially when having ${answer6}. ${answer2} is a big fan of ${answer7}. If there's one thing that ${answer2} is preternaturally good at, it's ${answer8}. And ${answer2} agrees with all sane peoples of the world: JavaScript and Node.js are flaming heaps of abominable unholiness!!!`);
+
                     // When you're doing using the `readline` object, close the open connection
                     // to the terminal.
                     rl.close();
+
+
                   });
 
                 });
@@ -136,12 +131,11 @@ const generateProfile = function() {
 
   });
 
-
-  // Gather the answers and generate and profile summary with them:
-  // console.log(`${answer[0]}, also goes by ${answer[1]}. ${answer[1]} loves to ${answer[2]}, while listening to ${answer[3]}. ${answer[1]} loves ${answer[4]}, especially when having ${answer[5]}. ${answer[1]} is a big fan of ${answer[6]}. If there's one thing that ${answer[1]} is preternaturally good at, it's ${answer[7]}.`);
 };
 
 
+
+// DRIVER CODE:
 generateProfile();
 
 
