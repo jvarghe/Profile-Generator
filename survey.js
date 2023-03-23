@@ -1,36 +1,39 @@
 /* CHALLENGE: M01 W04: MORE ASYNC JS: FUN PROFILE GENERATOR
- * 
- * We've learned a bit about the asynchronous nature of JavaScript and how 
+ *
+ * We've learned a bit about the asynchronous nature of JavaScript and how
  * callbacks are used for slow code, which takes time to complete. In this
  * activity we see what it looks like when we need to execute a sequence of
- * such asynchronous tasks in a linear manner. In other words, we will create 
- * a linear flow through asynchronous, callback-based function calls. 
- * 
- * We will learn how and when to leverage nested callbacks, as well as their 
- * potential drawbacks, and in doing so become more comfortable in solving 
+ * such asynchronous tasks in a linear manner. In other words, we will create
+ * a linear flow through asynchronous, callback-based function calls.
+ *
+ * We will learn how and when to leverage nested callbacks, as well as their
+ * potential drawbacks, and in doing so become more comfortable in solving
  * real world problems using Node's asynchronous approach.
- * The readline module in Node helps us read one line at a time. It can use any input stream, but in our case we are only interested in stdin.
- * OBJECTIVE: It's hard to come up with fun and quirky descriptions for our 
- * online profiles. Let's help out our fellow internetters by creating a handy 
- * profile generator. To help out our fellow users, let's create a quick survey 
- * app which asks the user a bunch of questions like their favourite music, 
- * activity, food, sport, etc. It will then generate a profile description for 
+ *
+ * The readline module in Node helps us read one line at a time. It can use any
+ * input stream, but in our case we are only interested in stdin.
+ *
+ * OBJECTIVE: It's hard to come up with fun and quirky descriptions for our
+ * online profiles. Let's help out our fellow internetters by creating a handy
+ * profile generator. To help out our fellow users, let's create a quick survey
+ * app which asks the user a bunch of questions like their favourite music,
+ * activity, food, sport, etc. It will then generate a profile description for
  * them to use online, like this:
- * 
- *     Devani loves listening to Ludovico Einaudi while coding, devouring Yak 
- *     Momos for brunch, prefers Tennis over any other sport, and is amazing 
+ *
+ *     Devani loves listening to Ludovico Einaudi while coding, devouring Yak
+ *     Momos for brunch, prefers Tennis over any other sport, and is amazing
  *     at dropping mad puns at inopportune times.
- * 
- * 
+ *
+ *
  * TIPS:
- * 
- *   * READING USER INPUT: Since we'll be surveying the user, we need a nice way 
- *     to ask questions and fetch answers. Instead of reading one character at 
- *     a time, as we've done with `stdin` directly, Node has a built-in module 
- *     to read one line at a time. The `readline` module in Node helps us read 
- *     one line at a time. It can use any input stream, but in our case we are 
+ *
+ *   * READING USER INPUT: Since we'll be surveying the user, we need a nice way
+ *     to ask questions and fetch answers. Instead of reading one character at
+ *     a time, as we've done with `stdin` directly, Node has a built-in module
+ *     to read one line at a time. The `readline` module in Node helps us read
+ *     one line at a time. It can use any input stream, but in our case we are
  *     only interested in `stdin`.
- * 
+ *
  */
 
 
@@ -45,10 +48,10 @@ const readline = require('readline');
 // for you.
 const generateProfile = function() {
 
-  
+
   // COLLECT USER INPUT
-  // Create an object (of class `InterfaceConstructor`) with `input` and `output` 
-  // streams.
+  // Create an object (of class `InterfaceConstructor`) with `input` and
+  // `output` streams.
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -56,12 +59,12 @@ const generateProfile = function() {
 
   
   // DEFAULT READLINE TEXT
-  // 
+  //
   // Uses the `readline` object's `query` parameter to output a message to the
-  // user. When the user responds, the response is passed to the predicate via 
-  // the `answer` parameter. The user response triggers the body of this 
+  // user. When the user responds, the response is passed to the predicate via
+  // the `answer` parameter. The user response triggers the body of this
   // `readline` object, which simply parrots the answer back to the user.
-  // 
+  //
   // rl.question('What do you think of Node.js? ', (answer) => {
   //   console.log(`Thank you for your valuable feedback: ${answer}`);
 
